@@ -5,7 +5,7 @@ import Google from './React Component/Google';
 
 function App() {
   return (
-    <div className="App">
+    <div style={{overflowX:"hidden"}}>
      <Google/>
     </div>
   );
