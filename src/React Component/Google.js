@@ -52,6 +52,44 @@ const Google = () => {
   }, []);
 
   const [idCount, setIdCount] = useState(1);
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const toggleFaq = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
+  const faqs = [
+    {
+      question: "How do I make Chrome my default web browser?",
+      answer:
+        "You can set Chrome as your default browser on Windows or Mac operating systems as well as your iPhone, iPad or Android device. When you set Chrome as your default browser, any link you click will automatically open in Chrome. Find specific instructions for your device here.",
+    },
+    {
+      question: "How can I customise Chrome?",
+      answer:
+        "You can test out different colours, themes and settings in real time by opening a new tab in Chrome and clicking the “Customise Chrome” icon in the bottom right corner. A new side panel will open with the available customisation features. Learn more about customising Chrome.",
+    },
+    {
+      question: "What are Chrome's safety settings?",
+      answer:
+        "Chrome uses cutting-edge safety and security features to help you manage your safety. Use Safety Check to instantly audit for compromised passwords, safe browsing status and any available Chrome updates. Learn more about safety and security on Chrome.",
+    },
+    {
+      question: "What is Chrome’s password manager?",
+      answer:
+        "Chrome uses Google Password Manager, which makes it simple to save, manage and protect your passwords online. It also helps you create strong, unique passwords for every account you use. Learn more about Google Password Manager.",
+    },
+    {
+      question: "How do I add a browser extension to Chrome?",
+      answer:
+        "It’s easy to add extensions to Chrome for desktop. Simply visit the Chrome Web Store, find and select the extension you want, and click Add to Chrome. Some extensions might need additional permissions. To use the extension, click on its icon to the right of the address bar. Learn more about extensions.",
+    },
+    {
+      question: "How do I update Chrome?",
+      answer:
+        "Normally updates happen in the background when you close and reopen your computer's browser. If you haven’t closed your browser in a while, you might see a pending update. Learn more about Chrome updates.",
+    },
+  ];
 
   const HandleIdInc = () => {
     if (idCount <= 3) {
@@ -89,7 +127,6 @@ const Google = () => {
           </div>
         </div>
       </div>
-
       <div className="section">
         <div>
           <img
@@ -142,13 +179,15 @@ const Google = () => {
           </a>
         </p>
       </div>
-
       <div className="page2">
         <div className="secNav" ref={secNavRef}>
-          <div className="fast">Fast</div>
-          <div>Safe</div>
-          <div>Yours</div>
-          <div>By Google</div>
+          <div id="updates" className="fast">
+            Fast
+          </div>
+          <div id="yours">Yours</div>
+          <div id="safe">Safe</div>
+          <div id="fast">Fast</div>
+          <div id="google">By Google</div>
           <div className="dow">
             <img
               src={download}
@@ -365,7 +404,7 @@ const Google = () => {
         </div>
       </div>
       <div className="bookMark">
-        <div className="perform">
+        <div id="updates" className="perform">
           <div className="prior">
             <h2>
               {" "}
@@ -378,13 +417,16 @@ const Google = () => {
           </div>
 
           <div id="1" className="image">
-            <video autoplay playsinline style={{ width: "80vw" }} controls>
-              <source src="../Images/videoframe.png" type="video/mp4" />
-            </video>
+            <img
+              className=""
+              src={"./banner.png"}
+              height={"100%"}
+              width={"100%"}
+            />
           </div>
         </div>
 
-        <div className="stayOnTop">
+        <div id="yours" className="stayOnTop">
           <div className="prior">
             <h2>
               {" "}
@@ -409,7 +451,7 @@ const Google = () => {
           </div>
         </div>
 
-        <div className="greenDiv">
+        <div id="safe" className="greenDiv">
           <div className="prior">
             <h2>
               {" "}
@@ -432,7 +474,7 @@ const Google = () => {
             />
           </div>
         </div>
-        <div className="blueDiv">
+        <div id="fast" className="blueDiv">
           <div className="prior">
             <h2>
               {" "}
@@ -474,6 +516,172 @@ const Google = () => {
             <img src={right} height={"32px"} width={"32px"} alt="Right arrow" />
           </a>
         </button>
+      </div>
+
+      {/* <div className="container">
+        <span className="browser-text">The browser</span>
+        <span className="built-container">
+          <span className="tools-icon">🛠️</span> 
+          <span className="built-text">built</span>
+        </span>
+        <span className="by-google">by Google</span>
+      </div> */}
+
+<div className="ai-section">
+  <div className="text-block-container">
+    <div className="left-side">
+      <h4 className="header-small">GOOGLE AI</h4>
+      <h1 className="header-large">Access AI superpowers while you browse.</h1>
+    </div>
+    <div className="right-side">
+      <p className="description">
+        Google is integrating artificial intelligence to make our products
+        more useful. We use AI for features like Search, Google Translate, 
+        and more, and we're innovating new technologies responsibly.
+      </p>
+      <a href="#" className="explore-link">
+        Explore Google AI →
+      </a>
+    </div>
+  </div>
+  <div className="graphic-container">
+    <img
+      src="googleai.png"
+      alt="Google AI Graphic"
+      style={{ marginTop: "10px" }}
+    />
+  </div>
+</div>
+
+
+      <div className="section-container" style={{marginTop:"10px"}}>
+        {/* Left card: Google Search */}
+        <div className="card google-search">
+          <h4 className="header-small">GOOGLE SEARCH</h4>
+          <h1 className="header-large">
+            The search bar you love, built right in.
+          </h1>
+          <div className="image-placeholder">
+            <img
+              src="searchBar.png"
+              alt="Search Bar"
+              className="search-image"
+            />
+          </div>
+        </div>
+
+        {/* Right card: Google Workspace */}
+        <div className="card google-workspace">
+          <h4 className="header-small">GOOGLE WORKSPACE</h4>
+          <h1 className="header-large">
+            Get things done, with or without Wi-Fi.
+          </h1>
+          <img src="gmail.png" alt="Gmail"  width={"540px"} height={"300px"} />
+        </div>
+      </div>
+
+      <div>
+        <h2 style={{ textAlign: "center", fontSize: "40px" }}>
+          Frequently asked questions
+        </h2>
+        <div className="faq-container">
+          {faqs.map((faq, index) => (
+            <div key={index} className="faq-item">
+              <div
+                className={`faq-question ${
+                  activeIndex === index ? "active" : ""
+                }`}
+                onClick={() => toggleFaq(index)}
+              >
+                {faq.question}
+                <span className="faq-toggle-icon">
+                  {activeIndex === index ? "x" : "+"}
+                </span>
+              </div>
+              {activeIndex === index && (
+                <div className="faq-answer">
+                  <p>{faq.answer}</p>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="banner-container">
+        <div className="banner-content">
+          <h1 className="banner-title">Take your browser with you</h1>
+          <p className="banner-subtitle">
+            Download Chrome on your mobile device or tablet and sign into your
+            account for the same browser experience, everywhere.
+          </p>
+          <button className="download-button">
+            <span className="download-icon">⬇️</span> Download Chrome
+          </button>
+        </div>
+        <div className="banner-qr">
+          <img src="/qrcode.png" alt="QR Code" className="qr-image" />
+          <p className="qr-text">Scan for the Chrome app</p>
+        </div>
+      </div>
+      <div className="footer-container">
+        <div style={{ display: "flex" }}>
+          <p style={{ fontSize: "20px", color: "black", marginRight: "10px" }}>
+            Follow us
+          </p>
+          <img src="/icons.png" width={"200px"} height={"60px"} />
+        </div>
+        <hr />
+        <div className="footer-links">
+          <div className="footer-column">
+            <a style={{ fontSize: "20px", color: "black" }}>Chrome Family</a>
+            <a href="#">Other Platforms</a>
+            <a href="#">Chromebooks</a>
+            <a href="#">Chromecast</a>
+          </div>
+          <div className="footer-column">
+            <a style={{ fontSize: "20px", color: "black" }}>Enterprise</a>
+            <a href="#">Download Chrome Browser</a>
+            <a href="#">Chrome Browser for Enterprise</a>
+            <a href="#">Chrome Devices</a>
+          </div>
+          <div className="footer-column">
+            <a style={{ fontSize: "20px", color: "black" }}>Education</a>
+            <a href="#">Google Chrome Browser</a>
+            <a href="#">Devices</a>
+            <a href="#">Web Store</a>
+          </div>
+          <div className="footer-column">
+            <a style={{ fontSize: "20px", color: "black" }}>Dev and Partners</a>
+            <a href="#">Chromium</a>
+            <a href="#">ChromeOS</a>
+            <a href="#">Chrome Web Store</a>
+            <a href="#">Chrome Experiments </a>
+            <a href="#">Chrome Beta </a>
+            <a href="#">Chrome Dev</a>
+            <a href="#"> Chrome Canary</a>
+          </div>
+          <div className="footer-column">
+            <a style={{ fontSize: "20px", color: "black" }}>Stay Connected</a>
+
+            <a href="#">Chrome Help</a>
+            <a href="#">Google Chrome Blog</a>
+            <a href="#">Update Chrome</a>
+            <a href="#">Chrome Tips</a>
+            <a>Google Chrome Blog</a>
+          </div>
+        </div>
+
+        <div className="footer-bottom">
+          <div className="footer-links-bottom">
+            <a href="#">Privacy and Terms</a>
+            <a href="#">About Google</a>
+            <a href="#">Google Products</a>
+          </div>
+          <div className="footer-info">
+            <a href="#">Help</a>
+            <a href="#">English - India</a>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -10,10 +10,10 @@ const Scroll = () => {
 
   useEffect(() => {
     const imageScroll = imageScrollRef.current;
-    
+
     const getScrollAmount = () => {
       let imageWidth = imageScroll.scrollWidth;
-      return -(imageWidth - window.innerWidth); 
+      return -(imageWidth - window.innerWidth);
     };
 
     const tween = gsap.to(imageScroll, {
@@ -21,10 +21,10 @@ const Scroll = () => {
       ease: "none",
       scrollTrigger: {
         trigger: imageWrapperRef.current,
-        start: "top top", 
-        end: () => `+=${imageScroll.scrollWidth}`, 
-        scrub: true, 
-        pin: true, 
+        start: "top top",
+        end: () => `+=${imageScroll.scrollWidth}`,
+        scrub: true,
+        pin: true,
         anticipatePin: 1,
         invalidateOnRefresh: true,
       },
@@ -32,14 +32,22 @@ const Scroll = () => {
 
     return () => {
       tween.kill();
-      ScrollTrigger.getAll().forEach(instance => instance.kill()); 
+      ScrollTrigger.getAll().forEach((instance) => instance.kill());
     };
   }, []);
 
   return (
     <div className="parentWrapper" style={{ overflow: "hidden" }}>
-      <div className="imageWrapper" ref={imageWrapperRef} style={{ height: "100vh" }}>
-        <div className="imageScroll" ref={imageScrollRef} style={{ display: "flex" }}>
+      <div
+        className="imageWrapper"
+        ref={imageWrapperRef}
+        style={{ height: "100vh" }}
+      >
+        <div
+          className="imageScroll"
+          ref={imageScrollRef}
+          style={{ display: "flex" }}
+        >
           <div>
             <img
               src="https://www.google.com/chrome/static/images/dev-components/chrome-gallery-1.webp"
