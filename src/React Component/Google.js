@@ -417,11 +417,9 @@ const Google = () => {
           </div>
 
           <div id="1" className="image">
-            <img
-              className=""
-              src={"./banner.png"}
-              height={"100%"}
-              width={"100%"}
+            <video
+              src="https://www.google.com/chrome/static/videos/dev-components/non-chrome.webm"
+              autoPlay
             />
           </div>
         </div>
@@ -527,34 +525,35 @@ const Google = () => {
         <span className="by-google">by Google</span>
       </div> */}
 
-<div className="ai-section">
-  <div className="text-block-container">
-    <div className="left-side">
-      <h4 className="header-small">GOOGLE AI</h4>
-      <h1 className="header-large">Access AI superpowers while you browse.</h1>
-    </div>
-    <div className="right-side">
-      <p className="description">
-        Google is integrating artificial intelligence to make our products
-        more useful. We use AI for features like Search, Google Translate, 
-        and more, and we're innovating new technologies responsibly.
-      </p>
-      <a href="#" className="explore-link">
-        Explore Google AI →
-      </a>
-    </div>
-  </div>
-  <div className="graphic-container">
-    <img
-      src="googleai.png"
-      alt="Google AI Graphic"
-      style={{ marginTop: "10px" }}
-    />
-  </div>
-</div>
+      <div className="ai-section">
+        <div className="text-block-container">
+          <div className="left-side">
+            <h4 className="header-small">GOOGLE AI</h4>
+            <h1 className="header-large">
+              Access AI superpowers while you browse.
+            </h1>
+          </div>
+          <div className="right-side">
+            <p className="description">
+              Google is integrating artificial intelligence to make our products
+              more useful. We use AI for features like Search, Google Translate,
+              and more, and we're innovating new technologies responsibly.
+            </p>
+            <a href="#" className="explore-link">
+              Explore Google AI →
+            </a>
+          </div>
+        </div>
+        <div className="graphic-container">
+          <img
+            src="googleai.png"
+            alt="Google AI Graphic"
+            style={{ marginTop: "10px" }}
+          />
+        </div>
+      </div>
 
-
-      <div className="section-container" style={{marginTop:"10px"}}>
+      <div className="section-container" style={{ marginTop: "10px" }}>
         {/* Left card: Google Search */}
         <div className="card google-search">
           <h4 className="header-small">GOOGLE SEARCH</h4>
@@ -563,9 +562,13 @@ const Google = () => {
           </h1>
           <div className="image-placeholder">
             <img
-              src="searchBar.png"
+              src="https://www.google.com/chrome/static/images/v2/gallery/search-front_desktop.webp"
               alt="Search Bar"
-              className="search-image"
+              style={{
+                marginLeft: "34px",
+                transition: "transform 0.3s ease",
+              }}
+              className="image-hover"
             />
           </div>
         </div>
@@ -576,7 +579,27 @@ const Google = () => {
           <h1 className="header-large">
             Get things done, with or without Wi-Fi.
           </h1>
-          <img src="gmail.png" alt="Gmail"  width={"540px"} height={"300px"} />
+          <div style={{ position: "relative", display: "inline-block" }}>
+            <img
+              src="https://www.google.com/chrome/static/images/v2/gallery/workspace-1.webp"
+              style={{ display: "block" }}
+              alt="First Image"
+            />
+            <img
+              src="https://www.google.com/chrome/static/images/v2/gallery/workspace-2.webp"
+              alt="Gmail"
+              style={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                width: "100%",
+                height: "100%",
+                transition: "transform 0.3s ease",
+              }}
+              className="hover-image"
+            />
+          </div>
         </div>
       </div>
 

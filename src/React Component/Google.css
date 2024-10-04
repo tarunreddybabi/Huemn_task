@@ -859,3 +859,10 @@ a {
   height: 50px;
 }
 
+.image-hover:hover {
+  transform: scale(1.2); 
+}
+
+.hover-image:hover {
+  transform: translate(-50%, -50%) scale(1.2); 
+}
